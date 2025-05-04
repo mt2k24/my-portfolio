@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>About - <%= name %>
+    </title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <%- include('partials/header') %>
+        <section id="about" class="about-section">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-description">
+                    <p>
+                        Hi, I'm <strong><%= name %></strong>, a passionate and detail-oriented software developer with
+                        experience in both the technical support and development fields. Currently, I work as a
+                        <strong>Software Support Engineer</strong> at <strong>Nevitech Data Solution</strong>, where I
+                        troubleshoot software issues, provide technical support, and help clients optimize their
+                        systems. This role has given me a deep understanding of the technical challenges that users
+                        face, which I now use to build better and more intuitive software solutions.
+                    </p>
+                    <p>
+                        Over the years, I've honed my problem-solving skills and developed a keen interest in web
+                        development. I have a strong foundation in frontend and backend technologies such as HTML, CSS,
+                        JavaScript, Node.js, and Express. I'm passionate about writing clean, efficient, and
+                        maintainable code. I have worked on several full-stack web projects and am constantly learning
+                        and growing as I take on new challenges.
+                    </p>
+                    <p>
+                        I'm now actively seeking a developer role where I can apply my technical expertise, contribute
+                        to innovative projects, and continue to grow as a software engineer. My goal is to leverage my
+                        experience in both support and development to create user-focused solutions that make a real
+                        impact.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <img src="your-image.jpg" alt="Photo" />
+                </div>
+            </div>
+        </section>
+    <%- include('partials/footer') %>
+</body>
+
+</html>
