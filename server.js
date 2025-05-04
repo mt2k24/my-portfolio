@@ -1,10 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-require('dotenv').config(); // ✅ Load .env variables
+require('dotenv').config(); // Load .env variables
 
 const app = express();
-const PORT = process.env.PORT || 3000; // Use PORT from .env
+const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -36,23 +36,26 @@ const data = {
   ]
 };
 
+// Route rendering helper
+function renderPage(res, page, data) {
+  res.render(page, data);
+}
+
 // Routes
-app.get('/', (req, res) => res.render('index', data));
-app.get('/about', (req, res) => res.render('about', data));
-app.get('/experience', (req, res) => res.render('experience', data));
-app.get('/projects', (req, res) => res.render('projects', data));
-app.get('/contact', (req, res) => res.render('contact', data));
+app.get('/', (req, res) => renderPage(res, 'index', data));
+app.get('/about', (req, res) => renderPage(res, 'about', data));
+app.get('/experience', (req, res) => renderPage(res, 'experience', data));
+app.get('/projects', (req, res) => renderPage(res, 'projects', data));
+app.get('/contact', (req, res) => renderPage(res, 'contact', data));
 
-// ✅ All other routes redirect back to home
-app.get('*', (req, res) => res.redirect('/'));
-
+// Contact form handling
 app.post('/contact', (req, res) => {
   const { name, email, message } = req.body;
   console.log("Contact Form:", { name, email, message });
   res.send("Thanks for reaching out!");
 });
 
-// 404 route - MUST be last
+// 404 route - must be last
 app.use((req, res) => {
   res.status(404).render('404', {
     url: req.originalUrl,
@@ -60,6 +63,7 @@ app.use((req, res) => {
   });
 });
 
+// Start server
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
