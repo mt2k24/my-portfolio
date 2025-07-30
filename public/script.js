@@ -37,3 +37,12 @@ if (window.location.pathname !== "/") {
     window.location.href = "/";  // Redirect to home page
   });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.getElementById("hamburger");
+  const navMenu = document.getElementById("nav-menu");
+
+  hamburger.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+  });
+});
