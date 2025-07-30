@@ -138,3 +138,45 @@
 h1 {
   text-transform: uppercase;
 }
+
+/* ✅ Responsive Navigation */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  .about-description {
+    width: 100%;
+  }
+
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image img {
+    width: 150px;
+    height: 150px;
+  }
+
+  section h2 {
+    font-size: 1.5rem;
+  }
+
+  .project, .experience-item {
+    font-size: 0.95rem;
+  }
+
+  form input, form textarea {
+    font-size: 1rem;
+  }
+
+  form button {
+    width: 100%;
+  }
+}
