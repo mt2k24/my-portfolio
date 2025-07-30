@@ -43,6 +43,7 @@ function renderPage(res, page, data) {
 
 // Routes
 app.get('/', (req, res) => renderPage(res, 'index', data));
+app.get('/home', (req, res) => res.redirect('/'));
 app.get('/about', (req, res) => renderPage(res, 'about', data));
 app.get('/experience', (req, res) => renderPage(res, 'experience', data));
 app.get('/projects', (req, res) => renderPage(res, 'projects', data));
